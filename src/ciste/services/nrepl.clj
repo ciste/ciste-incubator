@@ -1,7 +1,9 @@
 (ns ciste.services.nrepl
-  (:use [ciste.config :only [config describe-config]]
-        [clojure.tools.logging :as log]
-        [clojure.tools.nrepl.server :only [start-server stop-server]]))
+  (:require [ciste.config :refer [config describe-config]]
+            [clojure.tools.logging :as log]
+            [clojure.tools.nrepl.server :refer [default-handler
+                                                start-server
+                                                stop-server]]))
 
 (defn start
   []
