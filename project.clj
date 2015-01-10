@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [cider/cider-nrepl "0.8.2"]
-                 [ciste "0.5.0-SNAPSHOT"]
+                 [ciste "0.6.0-SNAPSHOT"]
                  [org.clojure/tools.nrepl "0.2.6"]
                  [org.clojure/tools.logging "0.3.1"]]
   :profiles {:dev
@@ -13,4 +13,4 @@
               [[log4j "1.2.17"]
                [midje "1.6.3"]]}}
   :plugins [[lein-midje "3.1.3"]
-            [codox "0.6.7"]])
+            [codox "0.8.10"]])
