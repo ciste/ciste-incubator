@@ -8,9 +8,10 @@
 
 (defn start
   []
-  (let [port (config ::port)]
+  (let [port (config :nrepl :port)]
     (log/infof "Starting nrepl server on port %s" port)
-    (start-server :port port :handler cider-nrepl-handler)))
+    (start-server :port (Integer/parseInt port)
+                  :handler cider-nrepl-handler)))
 
 (defn stop
   [])

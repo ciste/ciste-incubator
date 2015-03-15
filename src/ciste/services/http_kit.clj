@@ -25,7 +25,7 @@
     ;; start server
     (let [handler-var (resolve (symbol handler))
           stop-function (run-server handler-var
-                                    {:port (config :http :port)})]
+                                    {:port (Integer/parseInt (config :http :port))})]
       (dosync
        (reset! server stop-function)))))
 
