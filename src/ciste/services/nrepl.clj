@@ -10,8 +10,11 @@
   []
   (let [port (config :nrepl :port)]
     (log/infof "Starting nrepl server on port %s" port)
-    (start-server :port (Integer/parseInt port)
-                  :handler cider-nrepl-handler)))
+    (try
+      (start-server :port (Integer/parseInt port)
+                    :handler cider-nrepl-handler)
+      (catch Exception ex
+        (log/error "Couldn't start nrepl server" ex)))))
 
 (defn stop
   [])

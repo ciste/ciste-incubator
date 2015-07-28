@@ -4,10 +4,10 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [cider/cider-nrepl "0.8.2"]
+                 [cider/cider-nrepl "0.9.1"]
                  [ciste "0.6.0-SNAPSHOT"]
                  [http-kit "2.1.16"]
-                 [org.clojure/tools.nrepl "0.2.6"]
+                 [org.clojure/tools.nrepl "0.2.10"]
                  [org.clojure/tools.logging "0.3.1"]]
   :profiles {:dev
              {:dependencies
