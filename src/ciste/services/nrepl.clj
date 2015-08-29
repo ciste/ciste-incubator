@@ -12,6 +12,7 @@
     (log/infof "Starting nrepl server on port %s" port)
     (try
       (start-server :port (Integer/parseInt port)
+                    :bind "0.0.0.0"
                     :handler cider-nrepl-handler)
       (catch Exception ex
         (log/error "Couldn't start nrepl server" ex)))))
