@@ -1,5 +1,7 @@
 # ciste-incubator
 
+[![Build Status](http://build.jiksnu.org/job/ciste-incubator/badge/icon)](http://build.jiksnu.org/job/ciste-incubator/)
+
 A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
