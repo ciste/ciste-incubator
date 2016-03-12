@@ -16,6 +16,7 @@
               :plugins [[lein-ancient "0.6.7"]]}}
   :plugins [[lein-midje "3.1.3"]
             [codox "0.8.10"]]
+  :auto-clean false
   :repositories [["snapshots" {:url "http://artifactory.jiksnu.org/artifactory/libs-snapshot-local/"
                                :username [:gpg :env/artifactory_username]
                                :password [:gpg :env/artifactory_password]}]
