@@ -15,4 +15,10 @@
                [midje "1.8.3"]]
               :plugins [[lein-ancient "0.6.7"]]}}
   :plugins [[lein-midje "3.1.3"]
-            [codox "0.8.10"]])
+            [codox "0.8.10"]]
+  :repositories [["snapshots" {:url "http://artifactory.jiksnu.org/artifactory/libs-snapshot-local/"
+                               :username [:gpg :env/artifactory_username]
+                               :password [:gpg :env/artifactory_password]}]
+                 ["releases" {:url "http://artifactory.jiksnu.org/artifactory/libs-releases-local/"
+                              :username [:gpg :env/artifactory_username]
+                              :password [:gpg :env/artifactory_password]}]])
