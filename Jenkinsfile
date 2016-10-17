@@ -1,5 +1,7 @@
 #!groovy
 
+def clojure
+
 // Set build properties
 properties([[$class: 'GithubProjectProperty',
                displayName: 'Ciste Incubator',
@@ -7,7 +9,7 @@ properties([[$class: 'GithubProjectProperty',
 
 stage('Prepare environment') {
     node('docker') {
-        def clojure = docker.image('clojure')
+        clojure = docker.image('clojure')
         clojure.pull()
 
         sh 'env | sort'
