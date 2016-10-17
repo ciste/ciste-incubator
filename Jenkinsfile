@@ -14,18 +14,18 @@ stage('Prepare environment') {
     }
 }
 
-stage('Unit Tests') {
-    node('docker') {
-        clojure.inside {
-            checkout scm
-            wrap([$class: 'AnsiColorBuildWrapper']) {
-                sh 'lein midje'
-            }
+// stage('Unit Tests') {
+//     node('docker') {
+//         clojure.inside {
+//             checkout scm
+//             wrap([$class: 'AnsiColorBuildWrapper']) {
+//                 sh 'lein midje'
+//             }
             
-            step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
-        }
-    }
-}
+//             step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
+//         }
+//     }
+// }
 
 stage('Generate Reports') {
     node('docker') {
