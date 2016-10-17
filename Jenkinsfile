@@ -44,6 +44,8 @@ stage('Generate Reports') {
 // TODO: Skip for features and PRs
 stage('Deploy Artifacts') {
     node('docker') {
-        sh 'lein deploy'
+        clojure.inside {
+            sh 'lein deploy'
+        }
     }
 }
