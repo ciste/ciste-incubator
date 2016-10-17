@@ -45,7 +45,11 @@ stage('Generate Reports') {
 stage('Deploy Artifacts') {
     node('docker') {
         clojure.inside {
-            sh 'lein deploy'
+            withCredentials([[$class: 'UsernamePasswordMultiBinding',
+                                credentialsId: 'repo-creds',
+                                usernameVariable: 'REPO_USERNAME', passwordVariable: 'REPO_PASSWORD']]) {
+                sh 'lein deploy'
+            }
         }
     }
 }
