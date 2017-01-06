@@ -5,7 +5,7 @@ def clojure
 // Set build properties
 properties([[$class: 'GithubProjectProperty',
                displayName: 'Ciste Incubator',
-               projectUrlStr: 'https://github.com/duck1123/ciste-incubator/']]);
+               projectUrlStr: 'https://github.com/duck1123/ciste-incubator/']])
 
 stage('Prepare environment') {
     node('docker') {
@@ -42,14 +42,14 @@ stage('Generate Reports') {
 
 
 // TODO: Skip for features and PRs
-stage('Deploy Artifacts') {
-    node('docker') {
-        clojure.inside {
-            withCredentials([[$class: 'UsernamePasswordMultiBinding',
-                                credentialsId: 'repo-creds',
-                                usernameVariable: 'REPO_USERNAME', passwordVariable: 'REPO_PASSWORD']]) {
-                sh 'lein deploy'
-            }
-        }
-    }
-}
+//stage('Deploy Artifacts') {
+//    node('docker') {
+//        clojure.inside {
+//            withCredentials([[$class: 'UsernamePasswordMultiBinding',
+//                                credentialsId: 'repo-creds',
+//                                usernameVariable: 'REPO_USERNAME', passwordVariable: 'REPO_PASSWORD']]) {
+//                sh 'lein deploy'
+//            }
+//        }
+//    }
+//}
